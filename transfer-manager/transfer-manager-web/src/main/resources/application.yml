@@ -61,9 +61,9 @@ mybatis-plus:
 spring:
   profiles: dev
   datasource:
-      url: jdbc:mysql://localhost:3310/transfer?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-      username: root
-      password: 123456
+      url: jdbc:mysql://115.28.170.190:3666/ws_transfer?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+      username: transfer
+      password: tf1234
       filters: log4j,wall,mergeStat
   here:
       filesUploadPath: c:/img
@@ -86,9 +86,9 @@ logging:
 spring:
   profiles: produce
   datasource:
-      url: jdbc:mysql://localhost:3310/transfer?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-      username: ope_prd1
-      password: op123456
+      url: jdbc:mysql://115.28.170.190:3666/ws_transfer?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+      username: transfer
+      password: tf1234
       filters: log4j,wall,mergeStat
   here:
       path: /home/jxzc/img
