@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<root>
+<items>
+	 <item id="citytable"  startrow="2" startcell="0" headrow="1"   title="国家/地区" >
+	 	   <class id="city">cn.easyliao.transfer.pojo.TCity</class>
+	 	   <li name="name"  type="string" class="city" required="true">国家或城市</li>
+	 	   
+	 	   <li name="yuliu1"  type="string" class="city" required="true">所属地区</li>
+	 </item>
+</items>
+</root>

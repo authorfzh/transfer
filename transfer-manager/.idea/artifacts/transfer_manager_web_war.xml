@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="transfer-manager-web:war">
+    <output-path>$PROJECT_DIR$/transfer-manager-web/target</output-path>
+    <root id="archive" name="transfer.war">
+      <element id="artifact" artifact-name="transfer-manager-web:war exploded" />
+    </root>
+  </artifact>
+</component>

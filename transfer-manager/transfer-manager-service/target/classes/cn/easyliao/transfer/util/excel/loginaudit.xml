@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<root>
+<items>
+	 <item id="loginaudittable"  startrow="2" startcell="0" headrow="1"   title="用户登录审计" >
+	 	   <class id="loginaudit">cn.easyliao.transfer.biz.persistence.model.TLogin_audit</class>
+	 	   
+	 	   <li name="fullname"  type="string" class="loginaudit">姓名</li>
+	 	   <li name="account"  type="string" class="loginaudit" >账号</li>
+	 	   <li name="ipaddress"  type="string" class="loginaudit" >IP地址</li>
+	 	   <li name="loginresults"  type="string" class="loginaudit" >登录结果</li>
+	 	   <li name="logindate"  type="date" class="loginaudit" >登录日期</li>
+	 </item>
+</items>
+</root>

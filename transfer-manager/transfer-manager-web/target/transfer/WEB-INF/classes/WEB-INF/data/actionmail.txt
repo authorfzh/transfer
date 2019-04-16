@@ -1,0 +1,13 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+<#list list  as v>
+<p style="font-family: Helvetica, &quot;Microsoft Yahei&quot;, verdana;">您的通行码账号为:${v.code}</p>
+<p style="font-family: Helvetica, &quot;Microsoft Yahei&quot;, verdana;">本邮件由系统自动发送,请勿直接回复</p>
+<p style="font-family: Helvetica, &quot;Microsoft Yahei&quot;, verdana;">感谢您的使用,祝您使用愉快!</p>
+<p style="font-family: Helvetica, &quot;Microsoft Yahei&quot;, verdana;">sso系统!</p>
+</#list>
+</body>
+</html>

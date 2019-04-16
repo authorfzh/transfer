@@ -1,0 +1,170 @@
+.loginbody{
+	background: url("../../img/ssologin/background.jpg") no-repeat center fixed;
+	width:100%;  
+    height:100%; 
+    background-size:100% 100%; 
+    text-align: center;
+}
+
+.logindiv{
+	width:412px;  
+    height:450px;
+ 	background: url("../../img/ssologin/logindiv.png");
+	/* text-align: center;
+	float: none;  
+    display: block;  
+    margin-left: auto;  
+    margin-right: auto;
+    margin-top:auto;
+    margin-bottom:auto;  */
+    
+   /*  position:absolute;  
+    left:50%;  
+    top:50%;  
+    margin:-225px 0 0 -206px  */
+    margin-left: auto;  
+	
+}
+
+.logimg{
+	vertical-align:bottom;
+	margin-bottom:4px
+}
+
+.a1{
+	position: relative;
+	left: 0px;
+	top:45px;
+	font-size:16px;
+	color:#fff;
+}
+
+.aa{
+	width:412px;  
+    height:600px;
+    position:absolute;  
+    left:50%;  
+    top:50%;  
+    margin:-225px 0 0 -206px; 
+}
+
+.logintitle{
+	color: #808080;
+	font-size: 24px;
+	font-weight:normal;
+	vertical-align:bottom;
+}
+
+.title{
+	padding-top: 25px;
+}
+
+.spaninput{
+	border-style:none;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	
+}
+.input {
+	width:285px;
+	height:45px;
+	border-radius:5px;
+	border-style:none;
+}
+
+.input1{
+	margin-top: 25px;
+}
+
+.input2{
+	margin-top: 15px;
+}
+
+.input11{
+	margin-top: 35px;
+}
+
+.certificate-input{
+	width:298px;
+	height:45px;
+}
+
+.horizontal-div{
+	width:285px;
+	height:45px;
+}
+
+.lbt{
+	text-align:center;
+	background:#3d3b4f;
+	margin-top: 15px;
+	width:350px;
+	height:45px;
+	border-style:none;
+	border-radius:8px;
+	
+
+}
+
+.lbt2{
+	text-align:center;
+	background:#3d3b4f;
+	margin-top:35px;
+	width:350px;
+	height:45px;
+	border-style:none;
+	border-radius:8px;
+}
+
+.realize-left{
+	margin-left:10px;
+	height:13px;
+	border-bottom:2px solid #50616d; 
+	width:118px;
+	border-radius:2px;
+}
+
+.realize{
+	font-size:16px;
+}
+.realize-right{
+	height:13px;
+	border-bottom:2px solid #50616d; 
+	width:118px;
+	border-radius:2px;
+}
+
+.login-pattern{
+
+	margin-right: 20px;
+}
+
+.pattern-div{
+	margin-top: -35px;
+}
+
+.login-pattern-div{
+	width:66px;
+	height:66px;
+	display:inline-block;
+	margin-right:20px;
+}
+
+.loginspan{
+	font-size: 18px;
+	color: #fff;
+}
+
+.formdiv{
+	margin-left:30px;
+	text-align:center;
+}
+
+.div5{
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+.botimg{
+	margin-top:10px;
+}

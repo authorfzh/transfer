@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<root>
+<items>
+	 <item id="userbasictable"  startrow="2" startcell="0" headrow="1"   title="用户主账号" >
+	 	   <class id="userbasic">cn.easyliao.transfer.biz.persistence.model.TUserbasic</class>
+	 	   
+	 	   <li name="account"  type="string" class="userbasic" required="true">账号</li>
+	 	   <li name="name"  type="string" class="userbasic" required="true">姓名</li>
+	 	   <li name="idcard"  type="string" class="userbasic" required="true">身份证号</li>
+	 	   <li name="identification"  type="string" class="userbasic" required="true">唯一标识</li>
+	 	   <li name="socialsecuritycard"  type="string" class="userbasic" required="true">社保卡号</li>
+	 	   <li name="mail"  type="string" class="userbasic" required="true">个人邮箱</li>
+	 	   <li name="phone"  type="string" class="userbasic" required="true">座机号码</li>
+	 </item>
+</items>
+</root>

@@ -1,0 +1,5 @@
+cn\easyliao\transfer\modular\system\transfer\UserDto.class
+cn\easyliao\transfer\modular\system\transfer\ManagerUser.class
+cn\easyliao\transfer\modular\system\transfer\ReqAddManager.class
+cn\easyliao\transfer\modular\system\factory\UserFactory.class
+cn\easyliao\transfer\modular\system\transfer\ReqEditManager.class
