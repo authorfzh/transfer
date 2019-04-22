@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="../../js/jquery-2.1.1.js"></script>
+ 
+    <!-- 图标 -->
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" type="text/css"></link>
+    <!-- 通用样式  -->
+    <link rel="stylesheet" href="../../css/eui.css">
+
+    <!-- 二级树 -->
+    <link href="../../plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+    <script src="../../plugins/treeview/bootstrap-treeview.js"></script>
+    <!-- 模拟封装数据的json -->
+    <script src="./json.js"></script>
+    <!-- 内部的js -->
+    <script src="./internal.js"></script>
+    <!-- 需要改动的外部js -->
+    <script src="./external.js"></script>
+    
+</head>
+<body class="bdy_box">
+        <nav class="navbar navbar-static-top header-menu" role="navigation" >
+            </nav>
+            <!-- 左侧菜单盒子 -->
+            <nav class="main-menu"  id="left_menu">
+            </nav>
+            <!-- 二级导航菜单 -->
+            <nav   class="navbar-default navbar-side"  role="navigation" >
+              </nav>
+    
+              <!-- 右侧内容盒子   -->
+            <div  class="gray-bg page-wrapper" >
+                <!-- 加载  -->
+                 <iframe  src=""  id="myiframe" scrolling="auto"  frameborder="0"> </iframe>
+            </div>
+            
+</body>
+</html>

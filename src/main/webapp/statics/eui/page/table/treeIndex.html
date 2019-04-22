@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <!-- 图标 -->
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" type="text/css"></link>
+    <!-- 复选框 -->
+    <link href="../../plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/eui.css">
+    
+    <!-- 代码转换 -->
+    <link rel="stylesheet" href="../../plugins/prism/prism.css" type="text/css"></link>
+    <script type="text/javascript" src="../../plugins/prism/prism.js"></script>
+
+    <!--赋值粘贴-->
+    <script type="text/javascript" src="../../plugins/clipboard/clipboard.min.js"></script>
+    <script>
+        $(function(){
+            var clipboard = new ClipboardJS('.btn');
+            clipboard.on('success', function(e) {
+                console.log(e);
+            });
+    
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+        })
+    </script>
+   
+
+    <title>基本表单</title>
+
+</head>
+<body>
+           <!-- 中间 -->
+           <div class="content-box">
+              
+                 <!--实例开始-->
+                <div class="info">
+                    <h2 class="tatle-style">树表格</h2>
+                    <div class="explain_style">
+                            <p class="text-style">说明:</p>
+                            <ul>
+                                <li>表格使用的为layui,文档：https://www.layui.com/doc/modules/table.html#initSort</li>
+                                <li>树型表格不可设置分页</li>
+                                <li>表格初始化方法有所不同</br>
+                                    (1)新增 layui.config({</br>
+                                        base: '../../plugins/module/'  //树所需资源的路径</br>
+                                        }).extend({</br>
+                                            treetable: 'treetable-lay/treetable'</br>
+                                        })</br>
+                                     (2) render新增属性</br>
+                                     treeColIndex: 1,</br>
+                                     treeSpid: -1,   //主树键id</br>
+                                     treeIdName: 'id', //主树属性名称</br>
+                                     treePidName: 'pid', //子节点属性名称</br>
+                                     treeDefaultClose: true, //默认关闭</br>
+                                     treeLinkage: false,</br>
+                                </li>
+                            </ul>
+                    </div>
+                    <hr/>
+                 
+                    <div class="example_detail">
+                                    <h4  class="tatle-style">表格后台数据格式</h4>
+                                    <div >
+                                            <!-- 代码展示开始 -->
+                                            <pre class="  language-markup"><code class="  language-markup">{
+                                                "msg":"ok",
+                                                "code":"0",
+                                                "data":[
+                                                    {
+                                                        "id":"2754",
+                                                        "pid":"2753",
+                                                        "categoryId":2754,
+                                                        "categoryName":"02",
+                                                        "categoryMemo":null,
+                                                        "parentId":2753,
+                                                        "companyId":1
+                                                    },
+                                                    {
+                                                        "id":"2753",
+                                                        "pid":"-1",
+                                                        "categoryId":2753,
+                                                        "categoryName":"28测试",
+                                                        "categoryMemo":"给对方看过后就地方看过对访客感觉发的空格今飞凯达低空飞过京东方科技领导反馈了的李开复卡罗拉打开了法国单联开关低空飞过点开链接大方了氪金大佬",
+                                                        "parentId":0,
+                                                        "companyId":1
+                                                    },
+                                                "count":23
+                                            ]</code></pre>
+                                            <!-- 代码展示结束 -->
+                                        </div>
+                                        <div >
+                                                <table id="customers">
+                                                        <tr>
+                                                          <th>参数键</th>
+                                                          <th>子节点</th>
+                                                          <th>说明</th>
+                                                        </tr>
+                                               
+                                                        <tr>
+                                                            <td>msg</td>
+                                                            <td></td>
+                                                            <td>提示语</td>
+                                                        </tr>
+                                                        <tr class="alt">
+                                                            <td>code</td>
+                                                            <td></td>
+                                                            <td>0为成功 其他为失败</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>count</td>
+                                                            <td></td>
+                                                            <td>总数</td>
+                                                        </tr>
+                                                        <tr class="alt">
+                                                            <td rowspan="3">data</td>
+                                                            <td></td>
+                                                            <td>数据</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>id</td>
+                                                            <td>子节点主键</td>
+                                                        </tr>   
+                                                        <tr class="alt"> 
+                                                            <td>pid</td>
+                                                            <td>父节点</td>
+                                                        </tr>  
+                                                       
+                                                       
+                                                 </table>    
+                                        </div>
+
+                                        <h4  class="tatle-style">页面引入资源</h4>
+                                        <div  class="copy_content2">
+                                            <!-- 代码展示开始 -->
+                                            <pre class="  language-markup"><code class="  language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../js/jquery-2.1.1.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                                <span class="token comment">&lt;!-- 图标 --&gt;</span>
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/font-awesome/css/font-awesome.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>link</span><span class="token punctuation">&gt;</span></span>
+                                                <span class="token comment">&lt;!-- 通用样式  --&gt;</span>
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../css/eui.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                            
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/layui-v2.4.5/layui/css/layui.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span>  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/layui-v2.4.5/layui/layui.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+                                                <span class="token keyword">var</span> toolbarHtml<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">;</span>
+                                                      toolbarHtml<span class="token operator">=</span><span class="token string">'&lt;div class="layui-btn-container"&gt;'</span><span class="token operator">+</span>
+                                                                      <span class="token string">'&lt;button type="button" class="btn btn_primary"  id="btn-expand" lay-event="getCheckData"&gt;&lt;img class="img_style"   src="&lt;%=path %&gt;/static/img/add.png"/&gt;新增&lt;/button&gt;'</span><span class="token operator">+</span>
+                                                              <span class="token string">'&lt;/div&gt;'</span><span class="token punctuation">;</span>
+                                                <span class="token keyword">var</span> params <span class="token operator">=</span> <span class="token punctuation">{</span>
+                                                            
+                                                            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                                                <span class="token comment">//操作按钮信息					  </span>
+                                                <span class="token keyword">function</span> <span class="token function">operatefun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                                                    <span class="token keyword">var</span> btnHtml<span class="token operator">=</span><span class="token string">'&lt;div class="layui-btn-container"&gt;'</span><span class="token operator">+</span>
+                                                                    <span class="token string">'&lt;a class="operateBtn" lay-event="edit"&gt;修改&lt;/a&gt;'</span><span class="token operator">+</span>
+                                                                    <span class="token string">'&lt;a class="operateBtn" lay-event="del" style="margin-left: 10px;"&gt;删除&lt;/a&gt;'</span><span class="token operator">+</span>
+                                                                <span class="token string">'&lt;/div&gt;'</span><span class="token punctuation">;</span>
+                                                           <span class="token keyword">return</span> 	btnHtml<span class="token punctuation">;</span>		 
+                                                <span class="token punctuation">}</span>
+                                                
+                                                <span class="token comment">//表格初始化	  </span>
+                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                                                   layui<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                                                         base<span class="token punctuation">:</span> <span class="token string">'../../plugins/module/'</span>
+                                                   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                                                        treetable<span class="token punctuation">:</span> <span class="token string">'treetable-lay/treetable'</span>
+                                                   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'layer'</span><span class="token punctuation">,</span> <span class="token string">'table'</span><span class="token punctuation">,</span> <span class="token string">'treetable'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                        <span class="token keyword">var</span> $ <span class="token operator">=</span> layui<span class="token punctuation">.</span>jquery<span class="token punctuation">;</span>
+                                                        <span class="token keyword">var</span> table <span class="token operator">=</span> layui<span class="token punctuation">.</span>table<span class="token punctuation">;</span>
+                                                        <span class="token keyword">var</span> layer <span class="token operator">=</span> layui<span class="token punctuation">.</span>layer<span class="token punctuation">;</span>
+                                                        <span class="token keyword">var</span> treetable <span class="token operator">=</span> layui<span class="token punctuation">.</span>treetable<span class="token punctuation">;</span>
+                                                        <span class="token comment">// 渲染表格</span>
+                                                        <span class="token keyword">var</span> <span class="token function-variable function">renderTable</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                            treetable<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                                                                treeColIndex<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                                                                treeSpid<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>
+                                                                treeIdName<span class="token punctuation">:</span> <span class="token string">'id'</span><span class="token punctuation">,</span>
+                                                                treePidName<span class="token punctuation">:</span> <span class="token string">'pid'</span><span class="token punctuation">,</span>
+                                                                treeDefaultClose<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                                                                treeLinkage<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+                                                                toolbar<span class="token punctuation">:</span>toolbarHtml<span class="token punctuation">,</span>
+                                                                elem<span class="token punctuation">:</span> <span class="token string">'#table1'</span><span class="token punctuation">,</span>
+                                                                url <span class="token punctuation">:</span> <span class="token string">"./treeTable.js"</span><span class="token punctuation">,</span>
+                                                                where <span class="token punctuation">:</span> params<span class="token punctuation">,</span>
+                                                                page<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+                                                                cols<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>
+                                                                    <span class="token punctuation">{</span>type<span class="token punctuation">:</span> <span class="token string">'checkbox'</span><span class="token punctuation">,</span> align<span class="token punctuation">:</span> <span class="token string">'left'</span><span class="token punctuation">,</span>width<span class="token punctuation">:</span><span class="token string">'40'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                                                                    <span class="token punctuation">{</span>field<span class="token punctuation">:</span> <span class="token string">'categoryName'</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token string">'名称'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                                                                    <span class="token punctuation">{</span>field<span class="token punctuation">:</span> <span class="token string">'categoryMemo'</span><span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token string">'描述'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                                                                    <span class="token punctuation">{</span>templet<span class="token punctuation">:</span> operatefun<span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token string">'操作'</span><span class="token punctuation">}</span>
+                                                                <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                                                <span class="token function-variable function">done</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".toolbarIdDiv"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".toolbarIdDiv"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".layui-table-tool"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        <span class="token comment">//清空属性</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".layui-table-tool"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"min-height"</span><span class="token punctuation">,</span><span class="token string">"0px"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".layui-table-tool"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"line-height"</span><span class="token punctuation">,</span><span class="token string">"0px"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".layui-table-tool"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"padding"</span><span class="token punctuation">,</span><span class="token string">"0px"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".layui-table-tool"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"width"</span><span class="token punctuation">,</span><span class="token string">"80px"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".layui-table-tool"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"float"</span><span class="token punctuation">,</span><span class="token string">"right"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                           layer<span class="token punctuation">.</span><span class="token function">closeAll</span><span class="token punctuation">(</span><span class="token string">'loading'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token punctuation">}</span>
+                                                            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                                                
+                                                        <span class="token function">renderTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#btn-expand'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                            treetable<span class="token punctuation">.</span><span class="token function">expandAll</span><span class="token punctuation">(</span><span class="token string">'#table1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                
+                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#btn-fold'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                            treetable<span class="token punctuation">.</span><span class="token function">foldAll</span><span class="token punctuation">(</span><span class="token string">'#table1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                
+                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#btn-refresh'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                           <span class="token function">renderTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        <span class="token comment">//头工具栏事件</span>
+                                                      table<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'toolbar(table1)'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                                                        <span class="token keyword">var</span> checkStatus <span class="token operator">=</span> table<span class="token punctuation">.</span><span class="token function">checkStatus</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>config<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"getCheckData"</span><span class="token operator">==</span>obj<span class="token punctuation">.</span>event<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                                                            <span class="token keyword">if</span><span class="token punctuation">(</span>checkStatus<span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentId"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentName"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">"顶级分类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#categoryName"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#categoryMemo"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#addModal'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                            <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>checkStatus<span class="token punctuation">.</span>data<span class="token punctuation">.</span>length<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentId"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>checkStatus<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentName"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>checkStatus<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>categoryName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#categoryName"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#categoryMemo"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#addModal'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                                                                toastr<span class="token punctuation">.</span><span class="token function">warning</span><span class="token punctuation">(</span><span class="token string">"请选择单个上级分类！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                            <span class="token punctuation">}</span>
+                                                        <span class="token punctuation">}</span>
+                                                       <span class="token comment">/*  switch(obj.event){
+                                                          case 'getCheckData':
+                                                            var data = checkStatus.data;
+                                                            layer.alert(JSON.stringify(data));
+                                                          break;
+                                                        }; */</span>
+                                                      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        <span class="token comment">//监听工具条</span>
+                                                        table<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'tool(table1)'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                            <span class="token keyword">var</span> data <span class="token operator">=</span> obj<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+                                                            <span class="token keyword">var</span> layEvent <span class="token operator">=</span> obj<span class="token punctuation">.</span>event<span class="token punctuation">;</span>
+                                                            <span class="token keyword">if</span> <span class="token punctuation">(</span>layEvent <span class="token operator">===</span> <span class="token string">'del'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#delModal'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#modaldelId"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>data<span class="token punctuation">.</span>categoryId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>layEvent <span class="token operator">===</span> <span class="token string">'edit'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                                <span class="token keyword">var</span> parentId <span class="token operator">=</span>obj<span class="token punctuation">.</span>data<span class="token punctuation">.</span>parentId<span class="token punctuation">;</span>
+                                                                <span class="token keyword">if</span><span class="token punctuation">(</span>parentId<span class="token operator">==</span><span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                                                                    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentIdEdit"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">"0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentNameEdit"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">"顶级分类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                                                                    $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                                                                    type<span class="token punctuation">:</span> <span class="token string">"Post"</span><span class="token punctuation">,</span>
+                                                                    url<span class="token punctuation">:</span> basePath <span class="token operator">+</span> <span class="token string">"/Service/ChatInfo/QuerySummaryCategory"</span> <span class="token punctuation">,</span>
+                                                                    data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                                                                        <span class="token string">"categoryId"</span> <span class="token punctuation">:</span> parentId<span class="token punctuation">,</span>
+                                                                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                                                                    dataType<span class="token punctuation">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
+                                                                    <span class="token function-variable function">success</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                                                                        <span class="token keyword">var</span> categoryId <span class="token operator">=</span>result<span class="token punctuation">.</span>message<span class="token punctuation">.</span>categoryId<span class="token punctuation">;</span>
+                                                                        <span class="token keyword">var</span> categoryName <span class="token operator">=</span>result<span class="token punctuation">.</span>message<span class="token punctuation">.</span>categoryName<span class="token punctuation">;</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentIdEdit"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>categoryId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentNameEdit"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>categoryName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                        <span class="token punctuation">}</span>
+                                                                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token punctuation">}</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#categoryId"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>data<span class="token punctuation">.</span>categoryId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#categoryNameEdit"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>data<span class="token punctuation">.</span>categoryName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#categoryMemoEdit"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>data<span class="token punctuation">.</span>categoryMemo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                               <span class="token keyword">if</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>parentId<span class="token operator">==</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                                                                    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#parentNameEdit"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token string">"顶级分类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                                <span class="token punctuation">}</span>
+                                                                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#editModal'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                            <span class="token punctuation">}</span>
+                                                        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                    
+                                                        <span class="token comment">//选中行事件</span>
+                                                      <span class="token comment">/*    table.on('row(table1)', function(obj){
+                                                                  var data = obj.data;
+                                                                  obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+                                                            });
+                                                             */</span>
+                                                    
+                                                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                        
+                                                    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>	</code></pre>
+                                            <!-- 代码展示结束 -->
+                                        </div>                         
+                                        <!-- 点击复制按钮 -->
+                                        <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content2">点击复制</button>  
+                    </div>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <div class="copy_content">
+                            <!-- 代码展示开始 -->
+                            <pre class="  language-markup"><code class="  language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>body_box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                <span class="token comment">&lt;!-- 总盒子 --&gt;</span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page_body<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                <span class="token comment">&lt;!-- 头部和内容的盒子 --&gt;</span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page_header<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrapper wrapper-content animated fadeInRight<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-lg-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ibox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                         <span class="token comment">&lt;!-- 表头 --&gt;</span>
+                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ibox-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>console-title<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>total<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>树表格<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+                                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>heardBtn toolbarIdDiv<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                          <span class="token comment">&lt;!--   &lt;a onclick="showAddModal()" class="abutton_add" style="margin-left: -15px;float:right;"&gt;新增&lt;/a&gt; --&gt;</span>
+                                                            <span class="token comment">&lt;!-- &lt;a onclick="showEditModal()" class="abutton_edit" style="float:right;"&gt;编辑&lt;/a&gt;
+                                                            &lt;a onclick="showDelModal()" class="abutton_modalDelete" style="float:right;"&gt;删除&lt;/a&gt; --&gt;</span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                    <span class="token comment">&lt;!-- 标线  --&gt;</span>
+                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>border_style<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                    <span class="token comment">&lt;!-- 搜索条件 --&gt;</span>
+                                               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>  
+                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>           
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page_content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">display</span><span class="token punctuation">:</span> none</span><span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>layui-btn<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn-refresh<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>刷新表格<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>table1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>layui-table<span class="token punctuation">"</span></span> <span class="token attr-name">lay-filter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>table1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>	</code></pre>
+                            <!-- 代码展示结束 -->
+                        </div>
+    
+                        <!-- 点击复制按钮 -->
+                        <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content">点击复制</button>
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                
+    
+                        <!-- 实例效果代码 -->
+                        <iframe class="example-result" style="height:500px"  id="firamePage" src="./treeTable.html"></iframe>
+                        
+                            
+                        <!-- 实例效果代码结束 -->
+    
+               
+    
+                </div>
+
+                
+                <!--实例结束-->
+            </div>
+</body>
+</html>

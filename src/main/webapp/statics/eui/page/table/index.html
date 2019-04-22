@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <!-- 图标 -->
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" type="text/css"></link>
+    <!-- 复选框 -->
+    <link href="../../plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/eui.css">
+    
+    <!-- 代码转换 -->
+    <link rel="stylesheet" href="../../plugins/prism/prism.css" type="text/css"></link>
+    <script type="text/javascript" src="../../plugins/prism/prism.js"></script>
+   <!--赋值粘贴-->
+   <script type="text/javascript" src="../../plugins/clipboard/clipboard.min.js"></script>
+   <script>
+        $(function(){
+            var clipboard = new ClipboardJS('.btn');
+            clipboard.on('success', function(e) {
+                console.log(e);
+            });
+    
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+        })
+    </script>
+</head>
+<body>
+           <!-- 中间 -->
+           <div class="content-box">
+              
+                 <!--实例开始-->
+                <div class="info">
+                    <h2 class="tatle-style">分页表格</h2>
+                    <div class="explain_style">
+                        <p class="text-style">说明:</p>
+                        <ul>
+                            <li>表格使用的为layui,文档：https://www.layui.com/doc/modules/table.html#initSort</li>
+                            <li>页面分内部与外部的js,只需修改外部js即可</li>
+                            <li>外部js接口信息:<br>
+                                (1)初始化加载表格<br>
+                                (2)向内容方法返回信息</br>
+                                    1:返回cols的json</br>
+                                    2:返回批量操作按钮方法returnToolbarHtml，lay-event="edit" 是操作的标识</br>
+                                (2)点击事件方法<br>
+                                    1.操作栏的点击事件 toolClick,得到的参数为：event(作为判断的标识),obj(当前行的对象)<br>
+                                    2.尾部按钮事件toolbarClick 该方法为批量才做的事件  <br>
+                                    3.行点击事件rowClick <br>                                                         
+                            </li>
+                        </ul>
+                    </div>
+                    <hr/>
+                 
+                    <div class="example_detail">
+                                    <h4  class="tatle-style">表格初始化</h4>
+                                    <div >
+                                            <!-- 代码展示开始 -->
+                                            <pre class="  language-markup"><code class="  language-markup">$(function(){
+                                                    var params={};
+                                                    var paramsJson=
+                                                                {
+                                                                    "id":"test",
+                                                                    "url":"./table.js",
+                                                                    "params":params,
+                                                                    "method":"post",
+                                                                    "page":true,
+                                                                    "limit":20,
+                                                                    "totalRow":false,
+                                                                    "self":false
+                                                                }
+                                                            
+                                                    var table = new LayuiTable(paramsJson);
+                                                    table.init();
+                                                });
+                                                </code></pre>
+                                            <!-- 代码展示结束 -->
+                                        </div>
+                                        <div >
+                                                <table id="customers">
+                                                        <tr>
+                                                          <th>参数键</th>
+                                                          <th>说明</th>
+                                                        </tr>
+                                               
+                                                        <tr>
+                                                            <td>id</td>
+                                                            <td>表格id</td>
+                                                        </tr>
+                                                        <tr class="alt">
+                                                            <td>url</td>
+                                                            <td>服务请求地址</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>params</td>
+                                                            <td>初始化的搜索参数</td>
+                                                        </tr>
+                                                        <tr class="alt">
+                                                            <td>method</td>
+                                                            <td>请求类型</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>page</td>
+                                                            <td>是否分页 （true/false）</td>
+                                                        </tr>   
+                                                        <tr class="alt"> 
+                                                            <td>limit</td>
+                                                            <td>展示分页的条数,默认为10</td>
+                                                        </tr>  
+                                                        <tr>
+                                                            <td>page</td>
+                                                            <td>是否分页 （true/false）</td>
+                                                        </tr>  
+                                                        <tr class="alt">
+                                                            <td>totalRow</td>
+                                                            <td>是否统计</td>
+                                                        </tr>   
+                                                        <tr>
+                                                            <td>self</td>
+                                                            <td>是否添加筛选</td>
+                                                        </tr>  
+                                                       
+                                                 </table>    
+                                        </div>
+
+                                        <h4  class="tatle-style">列的属性</h4>
+                                        <div >
+                                                <!-- 代码展示开始 -->
+                                                <pre class="  language-markup"><code class="  language-markup">[[  {"type": "checkbox", "align": 'left',"width":"40"}
+                                                        ,{"field":"itemId", "title": "常用语标识", "sort": "true" , "align": 'left'}
+                                                        ,{"field":"content" , "title": "常用语内容" , "align": 'left','width':'300'}
+                                                        ,{"field":"categoryId" , "title": "常用分类名称" ,"templet":categoryIdBtn , "align": 'left'}
+                                                        ,{"field":"customerId" , "title": "所属客服" , "align": 'left'}
+                                                        ,{"title": "操作","templet":operateBtn , "align": 'left'}
+                                                      ]</code></pre>
+                                                <!-- 代码展示结束 -->
+                                            </div>
+                                            <div >
+                                                    <table id="customers">
+                                                            <tr>
+                                                              <th>属性</th>
+                                                              <th>说明</th>
+                                                            </tr>
+                                                   
+                                                            <tr>
+                                                                <td>field</td>
+                                                                <td>属性名</td>
+                                                            </tr>
+                                                            <tr class="alt">
+                                                                <td>title</td>
+                                                                <td>标题名</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>type</td>
+                                                                <td>checkbox（复选框列），numbers（序号列）   普通列不需设置</td>
+                                                            </tr>
+                                                            <tr class="alt">
+                                                                <td>fixed</td>
+                                                                <td>定位  left（固定在左）、right（固定在右）</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>align</td>
+                                                                <td>对其方式  left（默认）、center（居中）、right（居右）</td>
+                                                            </tr>   
+                                                            <tr class="alt"> 
+                                                                <td>templet</td>
+                                                                <td>扩展方法 (方法的参数为res，需有返回值)</td>
+                                                            </tr>  
+                                                           
+                                                     </table>    
+                                            </div>
+
+                                <!-- 解释 -->
+                                <div class="special_explain">
+                                        <p>表格解释:对应修改外部js(tableExternal.js),(1)先将数据格式封装成layui的格式(2)定义列属性 是否有特殊转换和操作使用templet方法即可(3)内部透出的点击事件 需注意操作键值判断</p>
+                                </div>
+
+                                <h4  class="tatle-style">页面引入资源</h4>
+                                <div  class="copy_content2">
+                                    <!-- 代码展示开始 -->
+                                    <pre class="  language-markup"><code class="  language-markup">    <span class="token comment">&lt;!-- 基本样式 --&gt;</span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../js/jquery-2.1.1.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token comment">&lt;!-- 图标 --&gt;</span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/font-awesome/css/font-awesome.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>link</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token comment">&lt;!-- 通用样式  --&gt;</span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../css/eui.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token comment">&lt;!-- layui表格  --&gt;</span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/layui-v2.4.5/layui/css/layui.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span>  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/layui-v2.4.5/layui/layui.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token comment">&lt;!-- 封装的表格内部与外部js --&gt;</span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./tableExternal.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span>  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./tableInternal.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> </code></pre>
+                                    <!-- 代码展示结束 -->
+                                </div>
+                                <div class="special_explain">
+                                        <p>
+                                            1.需要引入layui的库 表格所需<br>
+                                            2.对应的外部tableExternal.js 需要修改<br>
+                                        </p>
+                                </div>
+                                <!-- 点击复制按钮 -->
+                                <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content2">点击复制</button>
+                    </div>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <div class="copy_content" >
+                            <!-- 代码展示开始 -->
+                            <pre class="  language-markup"><code class="  language-markup">   <span class="token comment">&lt;!-- 总盒子 --&gt;</span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>body_box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token comment">&lt;!-- 头部和内容的盒子 --&gt;</span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page_header<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrapper wrapper-content animated fadeInRight<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-lg-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ibox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                 <span class="token comment">&lt;!-- 表头 --&gt;</span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ibox-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                &lt;h5 class="console-title  id="total"&gt;分页表格<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+                                                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>heardBtn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_primary<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>showAdd()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>img_style<span class="token punctuation">"</span></span>   <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%=path %&gt;/static/img/add.png<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>新增<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token comment">&lt;!-- 标线  --&gt;</span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>border_style<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token comment">&lt;!-- 搜索条件 --&gt;</span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>searchContent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-md-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token comment">&lt;!-- 搜索条件栏 --&gt;</span>
+                                                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>searchDiv<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ibox-content<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background-color</span><span class="token punctuation">:</span> #ebedf1<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>searchForm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">clas</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form_content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>内容搜索<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selVal<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selVal<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>输入常用语内容精确查询<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content<span class="token punctuation">"</span></span> <span class="token attr-name">validatetype</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>clickBtn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>  <span class="token attr-name">data-type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>reload<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_submit submitClick<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin-left</span><span class="token punctuation">:</span> -20px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>搜索<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                                                                            &lt;button type="button"  onclick ="cleanContent()" class="btn btn_default" style="margin-left: 5px;" &gt;清空<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>  
+                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>           
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token comment">&lt;!-- 表格信息 --&gt;</span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page_content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>layui-hide<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span> <span class="token attr-name">lay-filter</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                        
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>	</code></pre>
+                            <!-- 代码展示结束 -->
+                        </div>
+    
+                        <!-- 点击复制按钮 -->
+                        <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content">点击复制</button>
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                
+    
+                        <!-- 实例效果代码 -->
+                        <iframe class="example-result" style="height:500px"  id="firamePage" src="./tablePage.html"></iframe>
+                        
+                            
+                        <!-- 实例效果代码结束 -->
+    
+               
+    
+                </div>
+
+                
+                <!--实例结束-->
+            </div>
+</body>
+</html>

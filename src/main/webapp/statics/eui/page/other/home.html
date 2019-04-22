@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <!-- 基本引入  -->
+   <link href="../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="../../js/jquery-2.1.1.js"></script>
+   <script src="../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!-- 图标 -->
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" type="text/css"></link>
+    <!-- 登录样式 -->
+    <link href="../../css/eui.css" rel="stylesheet">
+
+    <!-- 图例 -->
+    <script src="../../plugins/Highcharts-6.2.0/code/highcharts.js"></script>
+    <script src="../../plugins/Highcharts-6.2.0/code/modules/exporting.js"></script>
+    <script src="../../plugins/Highcharts-6.2.0/code/modules/series-label.js"></script>
+    <script src="../../plugins/Highcharts-6.2.0/code/modules/oldie.js"></script>
+    <script type="text/javascript">
+   
+        $(function () {
+         var chart = new Highcharts.Chart('container', {
+               title: {
+                   text: '',
+               },
+               subtitle: {
+                   text: '',
+               },
+               xAxis: {
+                   categories: ['2018-02-17', '2018-02-18', '2018-02-19', '2018-02-20', '2018-02-21', '2018-02-22', '2018-02-23', '2018-02-24']
+               },
+               yAxis: {
+                  title: {
+                           text: '数量(人)'
+                   }
+               },
+               colors: ['#279AF2','#CCBE14','#FF004D','#931DC9'],
+               legend: {
+                   verticalAlign :'top',
+                   align: 'center',
+                   layout:'horizontal',
+                   itemStyle : {
+                       'fontSize' : '12px',
+                       'font-weight' : 'normal'
+                   }
+                   
+               },
+               exporting: {//Highcharts 图表导出功能模块。
+                   enabled: false
+               },
+               credits:{ //连接除去水银
+                   enabled:false
+               },
+                series: [{
+                          name: '流量',
+                       data: [15, 50, 20, 150, 210, 140, 330, 600]
+                 },{
+                       name: '访客访问数',
+                       data: [100, 200, 300, 400, 600, 600, 700, 800]
+                 },{
+                       name: '访客数',
+                       data: [200, 100, 120, 140, 210, 300, 100, 200]
+                 },{
+                       name: '线索',
+                       data: [30, 130, 220, 240, 310, 340, 400, 450]
+                 }]
+           });
+
+
+            //初始化事件
+                $('.label_header li').click(function(){
+                    
+                    $(".label_header li").removeClass("label_active");
+                    $(this).addClass("label_active");
+                });
+        });
+    
+    
+      
+      </script>
+</head>
+<body class="home_bdy">
+		<!-- 右侧图标 -->
+		<div class="line_advi">
+			<img  src="../../image/line.png">
+		</div>
+  
+  		<!-- 头部盒子 -->
+  		<div class="header-box">
+  				<!-- 用户信息 -->
+  				<div class="row">
+  					 <div class="col-xs-8 box_ht">
+	  					 	<div class="row browse_user">
+	  					 		 <div class="col-xs-12 heard">
+	  					 				<ul>
+	  					 					<li>
+	  					 						<img class="user_img"  src="../../image/user.png">
+						 						<span class="title-font">姓名：</span>
+					 							<span class="content-font">丁宇</span>
+											</li>
+	  					 					<li>
+						 						<span class="title-font">职务：</span>
+					 							<span class="content-font">客服</span>
+											</li>
+	  					 					<li>
+						 						<span class="title-font">在线时长：</span>
+					 							<span class="content-font">5小时22分</span>
+											</li>
+	  					 					<li>
+						 						<span class="title-font">上次登录时间：</span>
+					 							<span class="content-font">12-06 12:11</span>
+											</li>
+	  					 				</ul>
+	  					 				<button type="button" class="btn btn_edit heard_operate">密码修改</button>
+	  					 		 </div>
+	  					 	  </div>
+	  					 	  <div class="row browse_detail">
+				 		 			<div class="col-xs-4">
+				 		 				<div class="browse_div" style="margin-right: -15px">
+				 		 					<span class="browse_text">网站流量</span>
+						 		 			<span class="browse_number">351</span>
+				 		 				</div>
+				 		 			</div>
+				 		 			<div class="col-xs-4">
+				 		 				<div class="browse_div" style="margin-right: -15px">
+						 		 			<span class="browse_text">访客访问数</span>
+						 		 			<span class="browse_number">1351</span>
+				 		 				</div>
+				 		 			</div>
+				 		 			<div class="col-xs-4">
+				 		 				<div class="browse_div">
+						 		 			<span class="browse_text">访客数</span>
+						 		 			<span class="browse_number">351</span>
+				 		 				</div>
+				 		 			</div>
+				 		 	 </div>
+  					</div>
+  					<div class="col-xs-4 box_ht">
+						<div class="label_header">
+			 		 		<ul>
+			 		 			<li class="label_active"><span>全部公告</span></li>
+			 		 			<li ><span>升级</span></li>
+			 		 			<li ><span>其他</span></li>
+			 		 		</ul>
+				 		 </div>
+					 	 <div class="label_content">
+					 		 <ul class="label_ul">
+					 		 	<li>
+			 						<span class="title-font">[升级]</span>
+		 							<span class="content-font">12月1号客户端1.0升级</span>
+								</li>
+					 		 			<li>
+			 						<span class="title-font">[升级]</span>
+		 							<span class="content-font">12月1号客户端1.0升级</span>
+								</li>
+					 		 			<li>
+			 						<span class="title-font">[升级]</span>
+		 							<span class="content-font">12月1号客户端1.0升级</span>
+								</li>
+								<li>
+			 						<span class="title-font">[升级]</span>
+		 							<span class="content-font">12月1号客户端1.0升级</span>
+								</li>
+								<li>
+			 						<span class="title-font">[升级]</span>
+		 							<span class="content-font">12月1号客户端1.0升级</span>
+								</li>
+								<li>
+			 						<span class="title-font">[升级]</span>
+		 							<span class="content-font">12月1号客户端1.0升级</span>
+								</li>
+								<li>
+			 						<span class="title-font">[升级]</span>
+		 							<span class="content-font">12月1号客户端1.1升级</span>
+								</li>
+			 		 		</ul>
+			 		 	</div>
+  					</div>
+  				</div>
+  			</div>
+  
+  			<!-- 图形统计 -->
+            <div class="row float_div" >
+                <div class="col-xs-12">
+                		 <div id="container" class="jshare_div" style="height:300px;"></div>
+                </div>
+            </div>
+            
+            <!-- 浏览的信息 -->
+	 		<div class="row record_box">
+	 			<div class="col-xs-12">
+		 			<div class="record_title">
+					 <h5 class="title_content"  id="total">常用功能</h5>
+					</div>
+					<div  class="record_content">
+			 				<div class="record_div">
+			 					<span>两字</span>
+			 				</div>
+			 				<div class="record_div">
+			 					<span>三个字</span>
+			 				</div>
+			 				<div class="record_div">
+			 					<span>四个字了</span>
+			 				</div>
+			 				<div class="record_div">
+			 					<span>五个字了呀</span>
+			 				</div>
+			 				
+			 				<div class="record_div">
+			 					<span>六个字六六六</span>
+			 				</div>
+					</div>
+					<div class="record_title_t1">
+						 <h5 class="title_content"  id="total">最近浏览</h5>
+					</div>
+					<div class="record_content">
+			 				<div class="record_div">
+			 					<span>网站流量</span>
+			 				</div>
+			 				
+			 				<div class="record_div">
+			 					<span>网站流量</span>
+			 				</div>
+					</div>
+	 			</div>
+	 	 </div>
+</body>
+</html>

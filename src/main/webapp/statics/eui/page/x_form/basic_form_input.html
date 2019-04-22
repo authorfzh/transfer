@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 基本引入  -->
+    <link href="../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!-- 图标 -->
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" type="text/css"></link>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/eui.css">
+    <!-- 代码转换 -->
+    <link rel="stylesheet" href="../../plugins/prism/prism.css" type="text/css"></link>
+    <script type="text/javascript" src="../../plugins/prism/prism.js"></script>
+    <!--赋值粘贴-->
+    <script type="text/javascript" src="../../plugins/clipboard/clipboard.min.js"></script>
+
+    <script>
+        $(function(){
+            var clipboard = new ClipboardJS('.btn');
+            clipboard.on('success', function(e) {
+                console.log(e);
+            });
+    
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+        })
+    </script>
+
+    <title>基本表单</title>
+
+</head>
+<body>
+           <!-- 中间 -->
+           <div class="content-box">
+                 <!--实例开始-->
+                <div class="info">
+                    <h2 class="tatle-style">输入状态</h2>
+                    <p class="text-style">说明:</p>
+                    <ul>
+                        <li>引入基本样式,相关html</li>
+                        <li>冻结状态需添加样式content_disabled 和设置状态disabled="disabled"</li>
+                        <li>提示语分成功与失败,位置分底部和右侧 根据需求编写</li>
+                    </ul>
+                    <hr/>
+                    <div class="example_detail">
+                        <h4  class="tatle-style">页面引入资源</h4>
+                            <div  class="copy_content2">
+                                <!-- 代码展示开始 -->
+                                <pre class="  language-markup"><code class="  language-markup">    <span class="token comment">&lt;!-- 基本引入  --&gt;</span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../js/jquery-2.1.1.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token comment">&lt;!-- 图标 --&gt;</span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/font-awesome/css/font-awesome.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>link</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token comment">&lt;!-- 复选框 --&gt;</span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token comment">&lt;!-- 公共样式 --&gt;</span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../css/eui.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+                                <!-- 代码展示结束 -->
+                            </div>
+                           
+                            <!-- 点击复制按钮 -->
+                         <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content2">点击复制</button>
+                           
+                </div>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <div class="copy_content">
+                     
+                            <!-- 代码展示开始 -->
+                            <pre class="  language-markup"><code class="  language-markup">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrapper wrapper-content animated fadeInRight<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-lg-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ibox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>                                                                    
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form_content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认状态：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>请输入<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                            
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>冻结状态：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>   <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content_disabled<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>disabled<span class="token punctuation">"</span></span>  <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>测试一下字体<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>失败信息：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>请输入<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content_right errorBorder<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-exclamation-circle error_msg_right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>msg_margin<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>错误信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>失败信息：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content_bottom errorBorder<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>失败信息输入<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-exclamation-circle error_msg_bottom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>msg_margin<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>错误信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>填写正确：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>请输入<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content_right<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-check-circle success_msg_right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>msg_margin<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>填写成功<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                            
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>填写正确：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>请输入<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content_bottom<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-check-circle success_msg_bottom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>msg_margin<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>填写成功<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>        
+                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>	
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                                <!-- 代码展示结束 -->
+                        </div>
+    
+                         <!-- 点击复制按钮 -->
+                         <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content">点击复制</button>
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+                        <div class="wrapper wrapper-content animated fadeInRight">
+                                <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="ibox" >                                                                    
+                                                <div class="form_content">
+                                                        <ul>
+                                                            <li >
+                                                                <span class="title">默认状态：</span>
+                                                                <input  type="text"  placeholder="请输入" class="form-control content" >
+                                                            </li>
+                                                            
+                                                            <li >
+                                                                <span class="title">冻结状态：</span>
+                                                                <input  type="text"   class="form-control content_disabled" disabled="disabled"  value="测试一下字体"/>
+                                                            </li>
+                                                            <li >
+                                                                <span class="title">失败信息：</span>
+                                                                <input  type="text"  placeholder="请输入" class="form-control content_right errorBorder" >
+                                                                <i class="fa fa-exclamation-circle error_msg_right"><span class="msg_margin">错误信息</span></i>
+                                                            </li>
+                                                            <li >
+                                                                <span class="title">失败信息：</span>
+                                                                <input  type="text"  class="form-control content_bottom errorBorder" value="失败信息输入" >
+                                                                <i class="fa fa-exclamation-circle error_msg_bottom"><span class="msg_margin">错误信息</span></i>
+                                                            </li>
+                                                            <li >
+                                                                <span class="title">填写正确：</span>
+                                                                <input  type="text"  placeholder="请输入" class="form-control content_right" >
+                                                                <i class="fa fa-check-circle success_msg_right"><span class="msg_margin">填写成功</span></i>
+                                                            </li>
+                                                            
+                                                            <li >
+                                                                <span class="title">填写正确：</span>
+                                                                <input  type="text"  placeholder="请输入" class="form-control content_bottom" >
+                                                                <i class="fa fa-check-circle success_msg_bottom"><span class="msg_margin">填写成功</span></i>
+                                                            </li>
+                                                        </ul>
+                                                  </div>        
+                                            </div>
+                                         </div>
+                                     </div>	
+                              </div>
+                            
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+    
+                </div>
+
+                
+                <!--实例结束-->
+            </div>
+</body>
+</html>

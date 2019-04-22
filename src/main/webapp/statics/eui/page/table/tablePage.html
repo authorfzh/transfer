@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 基本样式 -->
+    <link href="../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!-- 图标 -->
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" type="text/css"></link>
+    <!-- 通用样式  -->
+    <link rel="stylesheet" href="../../css/eui.css">
+    <!-- layui表格  -->
+    <link href="../../plugins/layui-v2.4.5/layui/css/layui.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript"  src="../../plugins/layui-v2.4.5/layui/layui.js"></script>
+    <!-- 封装的表格内部与外部js -->
+    <script type="text/javascript" src="./tableExternal.js"></script>
+    <script type="text/javascript"  src="./tableInternal.js"></script> 
+    
+</head>
+    <!-- 总盒子 -->
+<div class="body_box">
+        <!-- 头部和内容的盒子 -->
+        <div class="page_header">
+             <div class="wrapper wrapper-content animated fadeInRight">
+               <div class="row">
+                    <div class="col-lg-12">
+                         <div class="ibox">
+                                 <!-- 表头 -->
+                            <div  class="ibox-title">
+                                <h5 class="console-title  id="total">分页表格</h5>
+                             <div class="heardBtn">
+                                <button type="button" class="btn btn_primary" onclick="showAdd()"><img class="img_style"   src="../../image/add.png"/>新增</button>
+                            </div>
+                            </div>
+                            <!-- 标线  -->
+                            <div class="border_style"></div>
+                            <!-- 搜索条件 -->
+                            <div class="searchContent">
+                                <div class="row" >
+                                    <div class="col-md-12">
+                                        <!-- 搜索条件栏 -->
+                                         <div class="searchDiv" >
+                                             <div class="ibox-content" style="background-color: #ebedf1;">
+                                                 <div class="searchForm">
+                                                     <div clas="form_content">
+                                                         <ul>
+                                                            <li >
+                                                                <span class="title">内容搜索</span>
+                                                                <input  type="text" id="selVal" name="selVal" placeholder="输入常用语内容精确查询" class="form-control content" validatetype="name">
+                                                            </li>
+                                                        </ul>
+                                                        <div class="clickBtn">
+                                                            <button type="button"  data-type="reload" class="btn btn_submit submitClick" style="margin-left: -20px;">搜索</button>
+                                                            <button type="button"  onclick ="cleanContent()" class="btn btn_default" style="margin-left: 5px;" >清空</button>
+                                                        </div>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>  
+                    </div>
+                 </div>
+             </div>           
+        </div>
+        <!-- 表格信息 -->
+      <div class="page_content">
+           <table class="layui-hide" id="test" lay-filter="test"></table>
+     </div>
+        
+    </div>	
+</body>
+</html>

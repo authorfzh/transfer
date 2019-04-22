@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 基本引入  -->
+    <link href="../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!-- 图标 -->
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" type="text/css"></link>
+    <!-- 复选框 -->
+    <link href="../../plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" rel="stylesheet">
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../../css/eui.css">
+    <!-- 代码转换 -->
+    <link rel="stylesheet" href="../../plugins/prism/prism.css" type="text/css"></link>
+    <script type="text/javascript" src="../../plugins/prism/prism.js"></script>
+
+    <!--赋值粘贴-->
+    <script type="text/javascript" src="../../plugins/clipboard/clipboard.min.js"></script>
+
+
+    <script>
+        $(function(){
+            var clipboard = new ClipboardJS('.btn');
+            clipboard.on('success', function(e) {
+                console.log(e);
+            });
+    
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+        })
+    </script>
+  
+
+    <title>基本表单</title>
+
+</head>
+<body>
+           <!-- 中间 -->
+           <div class="content-box">
+                 <!--实例开始-->
+                <div class="info">
+                    <h2 class="tatle-style">基本表单</h2>
+                    <p class="text-style">说明:</p>
+                    <ul>
+                        <li>样式基于BootStrap需引入相关包</li>
+                        <li>表单的class名称不可更改删除,根据需求添加修改即可</li>
+                        <li>复选框与单选框：实现名字及选择需要for的值与input中的id相同</li>
+                    </ul>
+                    <hr/>
+                    <div class="example_detail">
+                        <h4  class="tatle-style">页面引入资源</h4>
+                            <div  class="copy_content2">
+                                <!-- 代码展示开始 -->
+                                <pre class="  language-markup"><code class="  language-markup">    <span class="token comment">&lt;!-- 基本引入  --&gt;</span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../js/jquery-2.1.1.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token comment">&lt;!-- 图标 --&gt;</span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/font-awesome/css/font-awesome.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>link</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token comment">&lt;!-- 复选框 --&gt;</span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token comment">&lt;!-- 公共样式 --&gt;</span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../css/eui.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+                                <!-- 代码展示结束 -->
+                            </div>
+                           
+                       
+                              <!-- 点击复制按钮 -->
+                         <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content2">点击复制</button>
+                           
+                </div>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <div class="copy_content">
+                     
+                            <!-- 代码展示开始 -->
+                            <pre class="  language-markup"><code class="  language-markup"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrapper wrapper-content animated fadeInRight<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-lg-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ibox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>             
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form_content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>warn-li<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认状态：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>warnMsg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>当客服长时间未回复访客时，系统自动回复消息内容设置：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>请输入<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>requiredIcon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>*<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>必填内容：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>请输入<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>区间：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>请输入<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control district_left<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span> 
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>symbol<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>请输入<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control district_right<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>复选框：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chooseBox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox checkbox-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineCheckbox1<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>option1<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineCheckbox1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 不可点击 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox checkbox-default checkbox-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineCheckbox2<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>option1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineCheckbox2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 复选默认 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox checkbox-default checkbox-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineCheckbox3<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>option1<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineCheckbox3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 选中 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                    
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox checkbox-disabled checkbox-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineCheckbox4<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>option1<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineCheckbox4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 选中不可点击 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>                                                           
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>单选框：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ridoBox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio  radio-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineRadio1<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>option1<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radioInline2<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineRadio1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 不可点击 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio radio-default radio-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineRadio2<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>option1<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radioInline1<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineRadio2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 单选默认 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio radio-default radio-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineRadio3<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>option1<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radioInline1<span class="token punctuation">"</span></span>  <span class="token attr-name">checked</span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineRadio3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 单选 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio radio-disabled radio-inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineRadio4<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>option1<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radioInline2<span class="token punctuation">"</span></span> <span class="token attr-name">checked</span> <span class="token attr-name">disabled</span><span class="token punctuation">&gt;</span></span>
+                                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inlineRadio4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> 已选不可编辑 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>     
+                                               
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                                <!-- 代码展示结束 -->
+                        </div>
+    
+                         <!-- 点击复制按钮 -->
+                         <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content">点击复制</button>
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+                        <div class="wrapper wrapper-content animated fadeInRight">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox" >             
+                                            <div class="form_content">
+                                                <ul>
+                                                    <li class="warn-li">
+                                                        <span class="title">默认状态：</span>
+                                                        <span class="warnMsg">当客服长时间未回复访客时，系统自动回复消息内容设置：</span>
+                                                        <input  type="text"  placeholder="请输入" class="form-control content" >
+                                                    </li>
+                                                    <li >
+                                                            <span class="title"><i class="requiredIcon">*</i>必填内容：</span>
+                                                            <input type="text"  placeholder="请输入" class="form-control content" >
+                                                    </li>
+                                                    <li >
+                                                            <span class="title">区间：</span>
+                                                            <input type="text"  placeholder="请输入" class="form-control district_left" > 
+                                                            <span class="symbol">-</span>
+                                                            <input type="text"  placeholder="请输入" class="form-control district_right" >
+                                                    </li>
+                                                    <li >
+                                                            <span class="title">复选框：</span>
+                                                            <div class="chooseBox">
+                                                                <div class="checkbox checkbox-inline">
+                                                                    <input type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+                                                                    <label for="inlineCheckbox1"> 不可点击 </label>
+                                                                </div>
+                                                                <div class="checkbox checkbox-default checkbox-inline">
+                                                                    <input type="checkbox" id="inlineCheckbox2" value="option1">
+                                                                    <label for="inlineCheckbox2"> 复选默认 </label>
+                                                                </div>
+                                                                <div class="checkbox checkbox-default checkbox-inline">
+                                                                    <input type="checkbox" id="inlineCheckbox3" value="option1" checked="">
+                                                                    <label for="inlineCheckbox3"> 选中 </label>
+                                                                </div>
+                                                                
+                                                                <div class="checkbox checkbox-disabled checkbox-inline">
+                                                                    <input type="checkbox" id="inlineCheckbox4" value="option1" checked disabled>
+                                                                    <label for="inlineCheckbox4"> 选中不可点击 </label>
+                                                                </div>
+                                                            </div>                                                           
+                                                        </li>
+                                                        <li>
+                                                                <span class="title">单选框：</span>
+                                                              <div class="ridoBox">
+                                                               <div class="radio  radio-inline">
+                                                                    <input type="radio" id="inlineRadio1" value="option1" name="radioInline2" disabled>
+                                                                    <label for="inlineRadio1"> 不可点击 </label>
+                                                                </div>
+                                                                 <div class="radio radio-default radio-inline">
+                                                                    <input type="radio" id="inlineRadio2" value="option1" name="radioInline1" >
+                                                                    <label for="inlineRadio2"> 单选默认 </label>
+                                                                </div>
+                                                                 <div class="radio radio-default radio-inline">
+                                                                    <input type="radio" id="inlineRadio3" value="option1" name="radioInline1"  checked>
+                                                                    <label for="inlineRadio3"> 单选 </label>
+                                                                </div>
+                                                                 <div class="radio radio-disabled radio-inline">
+                                                                    <input type="radio" id="inlineRadio4" value="option1" name="radioInline2" checked disabled>
+                                                                    <label for="inlineRadio4"> 已选不可编辑 </label>
+                                                                </div>
+                                                            </div>
+                                                    </li>
+                                                </ul>
+                                            </div>     
+                                           
+                                    </div>
+                                 </div>
+                            </div>
+                            
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+    
+                </div>
+
+                
+                <!--实例结束-->
+            </div>
+</body>
+</html>

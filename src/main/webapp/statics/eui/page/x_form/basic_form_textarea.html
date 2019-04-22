@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 基本引入  -->
+    <link href="../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../../css/eui.css">
+    
+    <!-- 代码转换 -->
+    <link rel="stylesheet" href="../../plugins/prism/prism.css" type="text/css"></link>
+    <script type="text/javascript" src="../../plugins/prism/prism.js"></script>
+
+    <!--赋值粘贴-->
+    <script type="text/javascript" src="../../plugins/clipboard/clipboard.min.js"></script>
+
+
+    <script>
+        $(function(){
+            var clipboard = new ClipboardJS('.btn');
+            clipboard.on('success', function(e) {
+                console.log(e);
+            });
+    
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+        })
+    </script>
+  
+
+    <title>基本表单</title>
+
+</head>
+<body>
+           <!-- 中间 -->
+           <div class="content-box">
+                 <!--实例开始-->
+                <div class="info">
+                    <h2 class="tatle-style">基本表单</h2>
+                    <p class="text-style">说明:</p>
+                    <ul>
+                        <li>样式基于BootStrap需引入相关包</li>
+                        <li>表单的class名称不可更改删除,根据需求添加修改即可</li>                     
+                    </ul>
+                    <hr/>
+                    <div class="example_detail">
+                       
+                        <h4  class="tatle-style">页面引入资源</h4>
+                        <div  class="copy_content2">
+                            <!-- 代码展示开始 -->
+                            <pre class="  language-markup"><code class="  language-markup">    <span class="token comment">&lt;!-- 基本引入  --&gt;</span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../js/jquery-2.1.1.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token comment">&lt;!-- 公共样式 --&gt;</span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../css/eui.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+                            <!-- 代码展示结束 -->
+                        </div>
+                        <!-- 点击复制按钮 -->
+                        <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content2">点击复制</button>
+                </div>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <div class="copy_content">
+                     
+                            <!-- 代码展示开始 -->
+                            <pre class="  language-markup"><code class="  language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrapper wrapper-content animated fadeInRight<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col-lg-12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ibox<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>                                                                    
+                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form_content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认状态：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content_textarea_right<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>是的范德萨发的<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>textareaMsg_right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>限100字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认状态：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-control content_textarea_bottom<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>是的范德萨发的<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
+                                                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>textareaMsg_bottom<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>限100字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>        
+                                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>	
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                                <!-- 代码展示结束 -->
+                        </div>
+    
+                          <!-- 点击复制按钮 -->
+                          <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content">点击复制</button>
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+                        <div class="wrapper wrapper-content animated fadeInRight">
+                                <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="ibox" >                                                                    
+                                                <div class="form_content">
+                                                        <ul>
+                                                                <li >
+                                                                    <span class="title">默认状态：</span>
+                                                                    <textarea class="form-control content_textarea_right" maxlength="100">是的范德萨发的</textarea>
+                                                                    <span class="textareaMsg_right">限100字</span>
+                                                                </li>
+                                                                <li >
+                                                                    <span class="title">默认状态：</span>
+                                                                    <textarea class="form-control content_textarea_bottom" maxlength="100">是的范德萨发的</textarea>
+                                                                    <span class="textareaMsg_bottom">限100字</span>
+                                                                </li>
+                                                            </ul>
+                                                  </div>        
+                                            </div>
+                                         </div>
+                                     </div>	
+                              </div>
+                            
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+    
+                </div>
+
+                
+                <!--实例结束-->
+            </div>
+</body>
+</html>

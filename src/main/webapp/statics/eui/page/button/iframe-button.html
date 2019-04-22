@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/eui.css">
+    <link rel="stylesheet" href="../../icon/iconfont.css">
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/js.js"></script>
+    <script src="../../js/onclick.js"></script>
+    <link rel="stylesheet" href="../../plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../plugins/prism/prism.css" type="text/css">
+    <script type="text/javascript" src="../../plugins/prism/prism.js"></script>
+       <!--赋值粘贴-->
+   <script type="text/javascript" src="../../plugins/clipboard/clipboard.min.js"></script>
+   <script>
+        $(function(){
+            var clipboard = new ClipboardJS('.clipboardBtn');
+            clipboard.on('success', function(e) {
+                console.log(e);
+            });
+    
+            clipboard.on('error', function(e) {
+                console.log(e);
+            });
+        })
+    </script>
+    <title>按钮</title>
+</head>
+<body>
+           <!-- 中间 -->
+           <div class="content-box">
+                <div class="info">
+                    <h2 class="tatle-style">按钮</h2>
+                    <p class="text-style">为您提供了下列类型的“按钮”：</p>
+                    <ul>
+                        <li>重要按钮</li>
+                        <li>一级按钮</li>
+                        <li>二级按钮</li>
+                        <li>冻结按钮</li>
+                        <li>图标按钮</li>
+                        <li>图片按钮</li>
+                    </ul>
+                    <hr/>
+                    <div class="example_detail">
+                       
+                        <h4  class="tatle-style">页面引入资源</h4>
+                        <div  class="copy_content2">
+                            <!-- 代码展示开始 -->
+                            <pre class="  language-markup"><code class="  language-markup">   <span class="token comment">&lt;!-- 基本引入  --&gt;</span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../js/jquery-2.1.1.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token comment">&lt;!-- 图标 --&gt;</span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../plugins/font-awesome/css/font-awesome.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>link</span><span class="token punctuation">&gt;</span></span>
+                                <span class="token comment">&lt;!-- 公共样式 --&gt;</span>
+                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../../css/eui.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+                            <!-- 代码展示结束 -->
+                        </div>
+                        <!-- 点击复制按钮 -->
+                        <button class="btn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content2">点击复制</button>
+                    </div>
+                    <h3 class="tatle-style">重要按钮</h3>
+                    <p class="text-style"></p>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <!-- <div class="example-frag"> -->
+                            <!-- 代码片段 -->
+                            <pre class="  language-markup copy_content">
+                                <code class="  language-markup">
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span> 
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>点击<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                </code>
+                            </pre>
+                        <!-- </div> -->   
+                         <!-- 点击复制按钮 -->
+                         <button class="btn clipboardBtn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content">点击复制</button>                   
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+                        <button type="button" class="btn btn_primary">默认</button>
+                        <button type="button" class="btn btn_primary">点击</button>
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+
+                    <hr>
+                    <h3 class="tatle-style">一级按钮</h3>
+                    <p class="text-style"></p>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <!-- <div class="example-frag"> -->
+                            <!-- 代码片段 -->
+                            <pre class="  language-markup copy_content2">
+                                <code class="  language-markup">
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>点击<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>三个字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ABCD<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span> 
+                                </code>
+                            </pre>
+                        <!-- </div> -->
+    
+                       <!-- 点击复制按钮 -->
+                       <button class="btn clipboardBtn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content2">点击复制</button>                   
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+        <button type="button" class="btn btn_submit">默认</button>
+        <button type="button" class="btn btn_submit">点击</button>
+        <button type="button" class="btn btn_submit">三个字</button>
+        <button type="button" class="btn btn_submit">ABCD</button> 
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+
+
+                    <hr>
+                    <h3 class="tatle-style">二级按钮</h3>
+                    <p class="text-style"></p>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <!-- <div class="example-frag"> -->
+                            <!-- 代码片段 -->
+                            <pre class="  language-markup copy_content3">
+                                <code class="  language-markup">
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_default<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_default<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>点击<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span> 
+                                </code>
+                            </pre>
+                        <!-- </div> -->
+    
+                        <!-- 点击复制按钮 -->
+                        <button class="btn clipboardBtn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content3">点击复制</button>                   
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+        <button type="button" class="btn btn_default">默认</button>
+        <button type="button" class="btn btn_default">点击</button> 
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+
+
+                    <hr>
+                    <h3 class="tatle-style">冻结按钮</h3>
+                    <p class="text-style"></p>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <!-- <div class="example-frag"> -->
+                            <!-- 代码片段 -->
+                            <pre class="  language-markup copy_content4">
+                                <code class="  language-markup">
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_disabled disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>默认<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_disabled disabled<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>点击<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                </code>
+                            </pre>
+                        <!-- </div> -->
+    
+                        <!-- 点击复制按钮 -->
+                        <button class="btn clipboardBtn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content4">点击复制</button>                   
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+        <button type="button" class="btn btn_disabled disabled">默认</button>
+        <button type="button" class="btn btn_disabled disabled">点击</button>
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+
+
+                    <hr>
+                    <h3 class="tatle-style">图标按钮</h3>
+                    <p class="text-style"></p>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <!-- <div class="example-frag"> -->
+                            <!-- 代码片段 -->
+                            <pre class="  language-markup copy_content5">
+                                <code class="  language-markup">
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-trash-o icon_magin<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>默认<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_icon<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-trash-o icon_magin<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>点击<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                </code>
+                            </pre>
+                        <!-- </div> -->
+    
+                        <!-- 点击复制按钮 -->
+                        <button class="btn clipboardBtn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content5">点击复制</button>                   
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+            <button type="button" class="btn btn_icon"><i class="fa fa-trash-o icon_magin"></i>默认</button>
+            <button type="button" class="btn btn_icon"><i class="fa fa-trash-o icon_magin"></i>点击</button>
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+
+
+                    <hr>
+                    <h3 class="tatle-style">图片按钮</h3>
+                    <p class="text-style"></p>
+                    <div class="example">
+                        <h4  class="tatle-style" style="color:#fff">实例</h4>
+                        <!-- <div class="example-frag"> -->
+                            <!-- 代码片段 -->
+                            <pre class="  language-markup copy_content6">
+    <code class="  language-markup">
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_default<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>img_style<span class="token punctuation">"</span></span>   <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%=path %&gt;/static/img/upload.png<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>上传<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_default<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>img_style<span class="token punctuation">"</span></span>  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%=path %&gt;/static/img/download.png<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>下载<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>	
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn_primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>img_style<span class="token punctuation">"</span></span>   <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>&lt;%=path %&gt;/static/img/add.png<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>添加<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    </code>
+                            </pre>
+                        <!-- </div> -->
+    
+                        <!-- 点击复制按钮 -->
+                        <button class="btn clipboardBtn" style="padding: 0px 5px 0px 5px;" data-clipboard-action="copy" data-clipboard-target=".copy_content6">点击复制</button>                   
+                    </div>
+                    
+                    <!-- 实例效果 -->
+                    <p class="text-style">结果如下所示</p>
+                    <div class="example-result">
+    
+                        <!-- 实例效果代码 -->
+        <button type="button" class="btn btn_default"><img class="img_style"   src="../../image/upload.png"/>上传</button>
+        <button type="button" class="btn btn_default"><img  class="img_style"  src="../../image/download.png"/>下载</button>	
+        <button type="button" class="btn btn_primary"><img class="img_style"   src="../../image/add.png"/>添加</button>
+                        <!-- 实例效果代码结束 -->
+    
+                    </div>
+    
+                </div>
+            </div>
+</body>
+</html>

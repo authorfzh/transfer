@@ -1,0 +1,108 @@
+*{margin:0;padding:0}
+body{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 100%;
+        background: #F2F2F3;
+}
+a{text-decoration: none;color:#000}
+hr{margin-bottom:10px;}
+
+/* 头部样式 */
+.header{
+     /*   max-width:1600px;*/
+        min-width: 768px;
+        height:50px;
+        background:#96b97d;
+        padding-left:10px;
+        position: relative;
+}
+/* logo */
+.header-logo{float:left;padding-top: 8px;}
+/* 搜索框 */
+.seach{float: right;width: 180px;height: 26px;background: rgba(255, 255, 255, 0.5);border-radius: 100px;
+        margin-right: 30px;margin-top:10px;padding-left: 10px;box-sizing:border-box;transition: all 0.5s ease}
+.seach:hover{background: rgba(255, 255, 255, 1);box-shadow: 0 0 10px  #fff}
+.seach-icon{float: left;margin-right: 10px;}
+.seach-text{width: 120px;height: 25px;float: left;}
+.seach-text input{width:100%;height: 80%;border:none;outline:medium;color:#96b97d;font-weight: 800;background: rgba(228, 29, 29, 0);}
+
+/* 侧边栏 */
+.main{
+        width:100%;
+       /* max-width:1600px;*/
+        min-width: 768px;
+        display: flex;
+        position: fixed;
+        top: 50px;
+        left: 0px;
+        bottom: 0px;
+}
+.sidebar{width: 15%;height: auto;background: #fff;margin-left: 10px;
+        margin-top: 20px;padding: 4px 4px;border-radius: 10px;margin-right:20px;}
+.sidebar .sidebar-list{ border-radius: 10px;background:#f6f4f0;}
+.sidebar .sidebar-list .list{display:block;width: 100%;height:30px;line-height:30px;
+                            border-bottom: 1px solid #fff;transition:all .5s ease }
+/* .sidebar .sidebar-list .list:nth-child(1){border-radius: 10px 10px 0 0;} */
+/* .sidebar .sidebar-list .list:last-child{border-radius:0 0 10px 10px;} */
+.sidebar .sidebar-list>div{font-size: 12px;
+                            font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
+}
+/*.sidebar .sidebar-list div:hover {}*/
+.sidebar .sidebar-list .list.cur{background: #96b97d;color:#fff;font-size:16px;}
+.sidebar .sidebar-list .list:hover{background: #96b97d;color:#fff;font-size:16px;}
+.sidebar .sidebar-list div a div{margin-left:10px;}
+.sidebar .sidebar-list div:first-child a{border-radius:10px 10px 0 0;}
+.sidebar .sidebar-list div:last-child a{border-radius:0 0 10px 10px;}
+.sidebar .sidebar-list div:hover {font-size:16px;}
+
+/* 侧边栏的下拉清单样式 */
+.list-show{display: none; list-style: none;font-size: 12px;box-sizing:border-box;
+                padding-left:10px;background: #fff;}
+.list-show li{height: 30px;width: 100%;line-height:30px;transition: all 0.2s ease}
+.list-show li:hover{font-size:14px;color:#96b97d }
+.list-show li a:hover{cursor:pointer}
+/* 中间内容 */
+/* 中间内容头部 */
+.content-box{width:99%;height:auto;border-radius: 10px;margin-right: 20px;
+         margin-top: 20px;background: #fff;padding: 4px 5px 0 5px;}
+.content-box .content-top{width:100%;height:60px;line-height:60px;background: #f6f4f0;border-radius:10px 10px 0 0;
+                    padding-left:20px;padding-right:20px;box-sizing:border-box;margin-bottom: 4px;}
+.content-box .content-top .nav-left{font-size:20px;float: left;}
+.content-box .content-top .nav-left p span{font-weight: 700;color:grey;}
+.content-box .content-top .nav-right{font-size:20px;float: right}
+.content-box .content-top .nav-right p span{font-weight: 700;color:grey;}
+
+/* 介绍说明界面 */
+.info{width:100%;height:auto;box-sizing:border-box;background: #ffffff;padding:10px 20px 20px 20px;border-radius:0 0 10px 10px}
+/* 标题样式 */
+.info .tatle-style{margin-bottom:10px;}
+.info .text-style{color:#333;font-size: 14px;margin-bottom:10px;}
+.info ul li{list-style: none;font-size:14px;color:#333;}
+.info ul{margin-bottom:20px}
+/* 标题样式结束 */
+
+/* 中间区域实例 */
+
+.info .example{width:90%;height:auto;padding:10px 20px;border-radius: 10px;margin-bottom:20px;border:1px solid #d4d4d4;
+                background: -webkit-linear-gradient(#96b97d, #e5eecc);
+                background: -o-linear-gradient(#96b97d, #e5eecc);
+                background: -moz-linear-gradient(#96b97d, #e5eecc);
+                background: linear-gradient(#96b97d, #e5eecc);}
+/* 点击复制按钮样式 */
+.example .btn{width:80px;height:30px;line-height:30px;text-align:center;
+                margin:10px 10px 0 0;background: #8ac007;border-radius:5px;transition: all 0.2s ease;}
+.example .btn:hover {cursor:pointer;color:#fff;font-weight: 800;}
+.example .example-text{width: 100%;height:auto;min-height:300px;border:none;outline: none;resize: none;}
+
+
+.info .example .example-frag{padding-top: 20px;overflow: hidden;background: #fff;border:1px solid #ccc;}
+.info .example .example-frag span{font-size: 16px;font-weight: 800; color:#333;}
+
+/* 实例效果展示样式 */
+.example-result{width:90%;height:auto;padding: 30px 20px;border:1px solid #d4d4d4;}
+/* iframe的样式 */
+.content-box-content{border:none;height: 90%;}
